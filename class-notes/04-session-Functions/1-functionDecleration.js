@@ -73,6 +73,9 @@ function tekCiftSayi(x){
 
 
 
+// teamwork soru örnegi
+
+
 let isValid = true;
 function soru15(isValid) {
   if (isValid === false) {
