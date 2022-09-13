@@ -166,24 +166,24 @@ console.log(sayilar1.lastIndexOf(5));
 
 // const sayilar1 = [3, 5, 2, "2", "üc", 2, "bes", 5];
 
-const sayiString= prompt("Lütfen bir sayi giriniz");
+// const sayiString= prompt("Lütfen bir sayi giriniz");
 
-const sayiNumber = Number(sayiString)
+// const sayiNumber = Number(sayiString)
 
-let varMi=false;
+// let varMi=false;
 
-if(sayilar1.includes(sayiString)){
-    console.log("aradiginiz string indexi...:" , sayilar1.indexOf(sayiString));
-    varMi=true;
-}
-if(sayilar1.includes(sayiNumber)){
-    console.log("aradiginiz numberin indexi....:", sayilar1.indexOf(sayiNumber));
-    varMi = true;
-}
+// if(sayilar1.includes(sayiString)){
+//     console.log("aradiginiz string indexi...:" , sayilar1.indexOf(sayiString));
+//     varMi=true;
+// }
+// if(sayilar1.includes(sayiNumber)){
+//     console.log("aradiginiz numberin indexi....:", sayilar1.indexOf(sayiNumber));
+//     varMi = true;
+// }
 
-if(varMi==false){
-    console.log("aradiginiz eleman yok");
-}
+// if(varMi==false){
+//     console.log("aradiginiz eleman yok");
+// }
 
 // 2.yol
 // if(sayilar1.includes(sayiString)==false && sayilar1.includes(sayiNumber)== false){
@@ -198,27 +198,15 @@ if(varMi==false){
 //* orijinal diziyi değiştirmez
 
 
+// const sayilar1 = [3, 5, 2, "2", "üc", 2, "bes", 5];
+console.log(sayilar1.join(" ")); //tirnak icine ne yazarsan aralarina onu koyup yazdirir
 
+  //*dizinin 2 indexli elemanını tersten string olarak yazdır
 
+  //['Armut', 'Ananas', 'Mango', 'Cilek', 'Erik', 'Kavun', 'Muz', 'karpuz']
 
+console.log(meyveler[2].split("").reverse().join("")); 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   //*dizinin 2 indexli elemanını tersten string olarak yazdır
- 
 
 //* toString()
 //*-----------------------------------------------------------
@@ -226,15 +214,30 @@ if(varMi==false){
 //? (virgul) koyarak birlestirir ve string yapar.
 
 
+console.log(sayilar1.toString());
+
 
 //* slice()
 //*-----------------------------------------------------------
 
 
+const arabalar=["BMW", "Mercedes", "Audi", "Ferrari", "Anadol"]
 
+console.log(arabalar.slice(3));
+console.log(arabalar.slice(1,3));
+
+//! diziyi kopyalamak icin kullanilabilir.
+const arabalarCopy=arabalar.slice();
+console.log(arabalarCopy);
 
 //* concat()
 //*-----------------------------------------------------------
+
+const yazilar= ["ali", "dogu", "hilal", "ipek"]
+const rakamlar= [3, 5, 7, 1, 4]
+
+const birlesik= yazilar.concat(rakamlar, true, ["a", "b", "c"], [["x", "y", "z"]]);
+console.log(birlesik);
 
 
 
@@ -245,12 +248,20 @@ if(varMi==false){
 //? true aksi takdirde false deger dondurur.
 
 
+const yas=[18, 23, 35, 44, 57, 89, 15]
+console.log(yas.every((a)=> a>=18) ? "dizideki herkesin yasi 18 ve daha büyüktür" : "dizide 18 yas alti eleman var");
+
+
 
 //* some()
 //*-----------------------------------------------------------
 //? Aldigi callback fonksiyonuna gore test gerceklestirir.
 //? En az bir eleman icin bile test basarili ise true aksi
 //? takdirde false deger dondurur.
+
+
+console.log(yas.some((a)=> a>70)); //true
+console.log(yas.some((a)=> a>90)); //false
 
 
 
@@ -262,6 +273,9 @@ if(varMi==false){
 
 //?Ornek: Yasi 30 dan buyuk olan ilk elemani yazdirin
 
+console.log(yas.find((item)=> item>30));
+console.log(yas.findLast((item)=> item>30));
+
 
 //* findIndex()
 //*-----------------------------------------------------------
@@ -270,6 +284,8 @@ if(varMi==false){
 //? Eger hic bir eleman kosulu saglamazsa -1 dondurur.
 
 //?Ornek: Yasi 30 dan buyuk olan ilk elemanin indexini yazdirin
+
+console.log(yas.findIndex((i)=> i>30));
 
 
 
