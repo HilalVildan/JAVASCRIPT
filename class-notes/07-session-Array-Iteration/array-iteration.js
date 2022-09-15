@@ -104,7 +104,128 @@ console.log(fiyatlar);
 //* yazdirabilirdik.)
 
 const yeniDizi =  prices.filter((p)=> p<100)
+// const yeniDizi =  prices.filter((p)=> p<100).forEach((a)=>console.log(a))
 console.log(yeniDizi);
+
+
+
+//* ======================================================
+//*                       PIPELINE
+//* ======================================================
+
+//!slide daki soru, pipeline olmazsa böyle uzun uzun if le çözeriz
+//* Fiyatı 100 TL den fazla olanlara %10 zam, 100 TL den az olanlara ise %15 zam yapılmak isteniyor. 
+//* Ayrıca, zamlı olan yeni değerleri örnekteki gibi diziye saklamak istiyoruz.
+const tlFiyatlar = [100, 150, 100, 50, 80];
+
+const degerler = tlFiyatlar.map((d) => {
+  if (d > 100) {
+    d = d * 110/100;
+  } else {
+    d = d * 115/100;
+  }
+  return d;
+});
+console.log(degerler);
+
+
+const ilk  = tlFiyatlar.filter((a)=>a>100).map((c)=>c*1.1);
+const son  = tlFiyatlar.filter((a)=>a<=100).map((c)=>c*115/100);
+
+console.log(ilk.concat(son));
+
+
+
+
+//*-------------- ÖRNEK -------------------
+//*people dizisinde ismin ilk harfine göre arama yaparak ilgili isimlerin ilk 3 harfini yazdıran bir fonksiyon yazınız.
+const people = [
+  "Baser",
+  "Berivan",
+  "Mehmet",
+  "Mustafa",
+  "Mali",
+  "Halil",
+  "Fatih",
+  "Hasret",
+  "Fatma",
+];
+
+const bulHarf = (harf) =>{
+
+    people.filter((a)=>a.startsWith(harf.toUpperCase())).map((b)=>b.slice(0,3)).forEach((x)=> console.log(x));
+
+}
+
+bulHarf("b");
+bulHarf("M");
+
+
+
+
+
+//* ======================================================
+//*                       REDUCE
+//* ======================================================
+
+
+//* salaries dizisindeki maaslari toplayiniz (reduce methodu kullanin)
+//! forEach methodu dizilerde gecerlidir., tek eleman kullanan reduce de kullanamayiz.
+
+const salaries =[3000, 5000, 4000, 6000, 7500];
+
+console.log(salaries.reduce((toplam, diziEleman)=>toplam+diziEleman,30000)); //toplami 0 den baslatmamak icin böyle sayilar yazabilirz. 
+
+
+//* salaries dizisindeki maaslari carpiniz. (reduce methodu kullanin)
+console.log(salaries.reduce((carpim,diziEleman)=>carpim*diziEleman,1)); //carpimda 1 toplamda 0 default olarak gelir yazmaya bile gerek yoktur. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
