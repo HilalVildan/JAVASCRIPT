@@ -191,3 +191,9 @@ const yeni2 = people.filter((a)=> a.job == "developer").map((a)=>({
 }))
 
 console.log(yeni2);
+
+
+
+
+
+
