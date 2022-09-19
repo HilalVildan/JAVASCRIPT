@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+
+    text-align: center;
+
+}
+
+.imgcontainer{
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    padding-top: 10px;
+  
+}
+
+.btncontainer{
+    display: flex;
+    justify-content:center;
+    margin-top: 35px;
+    gap: 5px;
+}
+
