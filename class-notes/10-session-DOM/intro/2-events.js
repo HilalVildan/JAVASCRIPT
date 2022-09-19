@@ -24,7 +24,7 @@ const black = () => (header.style.color = "black");
 
 
 //? METHOD-3 (SADECE JAVASCRIPTTE YAZILAN YOL)
-//?---------------------------------------------------------------
+//? 1.yol---------------------------------------------------------------
 
 // example-1
 
@@ -54,9 +54,6 @@ ikinci.src="./img/js_logo.png"
 
 }
 
-
- 
-
 birinci.ondblclick=()=>{
 birinci.src="./img/winter1.jpg"
 ikinci.src="./img/dom-olaylar.png"
@@ -84,11 +81,21 @@ const buton = document.querySelector("#btn")
  }
 
 
+//!aynı element e hem onclick hem onmouseover atandığında, önce onmouseover  sonra onclick i çalıştırırsanız 
+//! sorun olmaz, tersi durumda onclick baskın old için onmouseover çalışmaz
 
 
+// ? METHOD-4 (ONLY JAVASCRIPTte yazilir - addEventListener())
+// ? 2.yol---------------------------------------------------------------
 
+buton.addEventListener("click", () => {
+  document.querySelector("body").style.backgroundImage =
+    "linear-gradient(to right, purple,gray)";
 
-
+  buton.textContent = "SEARCH";
+  buton.style.fontSize = "30px";
+  header.style.color = "red";
+});
 
 
 
