@@ -36,6 +36,9 @@ const getUsers = async () => {
 
         girlsDiv.innerHTML = `<h1 class="text-danger">An error occured!</h1>
 <img src="./404.jpeg" alt="" />`
+
+//throw hatanin ne oldugunu knedi cümlemizle görebiliriz. ama try catchsiz throw olursa hata durumunda kod burada
+//durur. alattaki yani siradaki kodlar calismaz. bu yüzden try catch kullanmaliyiz.fgnm ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
       throw new Error(`Biraz hata var : ${response.status}`);
     }
 
